@@ -408,6 +408,35 @@ footer{
 }
 
 
+#toTop{
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+
+  background: rgba(214,180,106,0.18);
+  color: #d6b46a;
+
+  border: 1px solid rgba(214,180,106,0.45);
+  font-size: 20px;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  display: none;
+  z-index: 9999;
+
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+}
+
+#toTop:hover{
+  background: rgba(214,180,106,0.28);
+}
+
 
 </style>
 
@@ -543,6 +572,26 @@ footer{
   <p>© 2026 Noor Essence</p>
 </footer>
 
+<button id="toTop">↑</button>
+
+<script>
+  const btn = document.getElementById("toTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      btn.style.display = "flex";
+    } else {
+      btn.style.display = "none";
+    }
+  });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
 
 
 </body>
