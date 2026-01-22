@@ -387,6 +387,27 @@ footer{
   border: 1px solid #22c55e;
 }
 
+/* ===== Punkt 2: Smooth Reveal (Animation) ===== */
+.reveal{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms ease, transform 700ms ease;
+  will-change: opacity, transform;
+}
+
+.reveal.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Wenn jemand Animationen nicht mag (Handy-Setting), dann aus */
+@media (prefers-reduced-motion: reduce){
+  .reveal{
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 
 
 </style>
@@ -445,27 +466,28 @@ footer{
 </header>
 
 <section>
-<h2>Warum Noor Essence?</h2>
+<h2 class="reveal">Warum Noor Essence?</h2>
+
 
 
 
   <div class="box">
-    <div class="card">
+    <div class="card reveal">
       <h3>📦 Versand aus Deutschland</h3>
       <p>Schneller und zuverlässiger Versand direkt aus Deutschland.</p>
     </div>
 
-    <div class="card">
+    <div class="card reveal">
       <h3>💬 Persönlicher Kontakt</h3>
       <p>Direkte Kommunikation über WhatsApp – ehrlich und unkompliziert.</p>
     </div>
 
-    <div class="card">
+    <div class="card reveal">
       <h3>🌙 Sorgfältige Auswahl</h3>
       <p>Produkte mit Bedeutung, Qualität und Respekt ausgewählt.</p>
     </div>
 
-    <div class="card">
+    <div class="card reveal">
       <h3>🤝 Vertrauen & Transparenz</h3>
       <p>Klare Abläufe, faire Kommunikation und Zuverlässigkeit.</p>
     </div>
@@ -514,6 +536,20 @@ footer{
 <footer>
   © 2026 Noor Essence
 </footer>
+<script>
+  const items = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target); // nur 1x animieren
+      }
+    });
+  }, { threshold: 0.12 });
+
+  items.forEach(item => observer.observe(item));
+</script>
 
 </body>
 </html>
