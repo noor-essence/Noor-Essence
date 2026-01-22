@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Barakah Market – Islamische Artikel</title>
+  <meta name="description" content="Gebetsmützen, Gebetsteppiche, Itr, Tasbih und mehr – Bestellung per WhatsApp/Instagram." />
+  <style>
+    :root{
+      --bg:#0b0f14; --card:#111826; --muted:#9aa7b2; --text:#e7eef4;
+      --accent:#3ddc97; --accent2:#7cc7ff; --border:rgba(255,255,255,.10);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#070a0f, #0b0f14 35%, #070a0f);color:var(--text)}
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    .topbar{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:10px;align-items:center}
+    .logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 10px 30px rgba(61,220,151,.15)}
+    .brand b{letter-spacing:.3px}
+    .nav{display:flex;gap:14px;flex-wrap:wrap}
+    .nav a{padding:8px 10px;border:1px solid transparent;border-radius:12px;color:var(--muted);text-decoration:none}
+    .nav a:hover{border-color:var(--border);color:var(--text)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:stretch;margin-top:10px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+    .panel{border:1px solid var(--border);border-radius:18px;background:rgba(17,24,38,.85);backdrop-filter: blur(6px);padding:18px}
+    .title{font-size:34px;line-height:1.1;margin:0 0 8px}
+    .subtitle{margin:0;color:var(--muted);font-size:15px}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+    .badge{font-size:12px;color:var(--muted);border:1px solid var(--border);padding:6px 10px;border-radius:999px}
+    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{display:inline-flex;gap:8px;align-items:center;justify-content:center;padding:10px 12px;border-radius:14px;border:1px solid var(--border);text-decoration:none}
+    .btn.primary{background:linear-gradient(135deg,rgba(61,220,151,.18),rgba(124,199,255,.14));border-color:rgba(61,220,151,.30)}
+    .btn:hover{transform:translateY(-1px)}
+    .note{margin-top:10px;color:var(--muted);font-size:12px}
+    .gridHead{display:flex;gap:10px;align-items:center;justify-content:space-between;margin:22px 0 10px}
+    .search{flex:1;display:flex;gap:10px;align-items:center}
+    input,select{width:100%;max-width:520px;background:#0e1522;border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:14px;outline:none}
+    select{max-width:220px}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width:900px){.products{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:560px){.products{grid-template-columns:1fr}}
+    .card{border:1px solid var(--border);border-radius:18px;background:rgba(17,24,38,.75);padding:14px;display:flex;flex-direction:column;gap:10px}
+    .img{height:140px;border-radius:14px;border:1px dashed rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.35);font-size:12px}
+    .card h3{margin:0;font-size:16px}
+    .meta{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{font-size:12px;color:var(--muted);border:1px solid var(--border);padding:4px 8px;border-radius:999px}
+    .price{font-weight:700}
+    .card p{margin:0;color:var(--muted);font-size:13px;line-height:1.35}
+    .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+    .mini{font-size:12px;padding:9px 10px;border-radius:12px}
+    .footer{margin-top:22px;color:var(--muted);font-size:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:900px){.footer{grid-template-columns:1fr}}
+    .smallpanel{border:1px solid var(--border);border-radius:18px;background:rgba(17,24,38,.60);padding:14px}
+    .smallpanel h4{margin:0 0 8px}
+    .kicker{color:var(--muted);font-size:12px;margin:0 0 6px}
+    .hr{height:1px;background:rgba(255,255,255,.08);margin:14px 0}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <b>Barakah Market</b><div style="font-size:12px;color:var(--muted)">Islamische Artikel • Bestellung per Nachricht</div>
+        </div>
+      </div>
+      <div class="nav">
+        <a href="#produkte">Produkte</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="panel">
+        <h1 class="title">Gebetsmützen, Teppiche, Itr, Tasbih – schlicht & zuverlässig.</h1>
+        <p class="subtitle">
+          Kleine Auswahl, klare Preise. Du bestellst per WhatsApp/Instagram – ich bestätige, du zahlst, dann geht’s direkt per DHL raus.
+        </p>
+
+        <div class="badges">
+          <span class="badge">📦 Versand: DHL</span>
+          <span class="badge">💬 Bestellung: WhatsApp/Instagram</span>
+          <span class="badge">✅ Schnelle Bestätigung</span>
+          <span class="badge">🇩🇪 Versand aus Deutschland</span>
+        </div>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="#produkte">🛍️ Produkte ansehen</a>
+          <a class="btn" id="whatsBtn" href="https://wa.me/491234567890?text=Salam%20ich%20m%C3%B6chte%20bestellen:%20" target="_blank" rel="noopener">WhatsApp bestellen</a>
+          <a class="btn" href="#kontakt">Kontakt</a>
+        </div>
+
+        <div class="note">Hinweis: Ersetze die WhatsApp-Nummer in der Datei (wa.me/49...).</div>
+      </div>
+
+      <div class="panel" id="ablauf">
+        <p class="kicker">So läuft’s ab</p>
+        <h3 style="margin:0 0 6px">Bestellen ohne Stress</h3>
+        <div class="hr"></div>
+        <ol style="margin:0;padding-left:18px;color:var(--muted);line-height:1.6;font-size:13px">
+          <li>Produkt auswählen (Name + Variante/Farbe).</li>
+          <li>Per WhatsApp/Instagram schreiben: Adresse + Menge.</li>
+          <li>Du bekommst Bestätigung + Gesamtpreis + Zahlungsinfo.</li>
+          <li>Nach Zahlung: Versand per DHL + Sendungsnummer.</li>
+        </ol>
+        <div class="hr"></div>
+        <p style="margin:0;color:var(--muted);font-size:12px">
+          Rückgabe/Umtausch: nach Absprache (Hygieneartikel beachten).
+        </p>
+      </div>
+    </section>
+
+    <div class="gridHead" id="produkte">
+      <div class="search">
+        <input id="q" placeholder="Suchen: z. B. Itr, Tasbih, Kufi, Teppich..." />
+      </div>
+      <select id="cat">
+        <option value="all">Alle Kategorien</option>
+        <option value="mütze">Gebetsmützen</option>
+        <option value="teppich">Gebetsteppiche</option>
+        <option value="itr">Itr / Parfumöl</option>
+        <option value="tasbih">Tasbih</option>
+      </select>
+    </div>
+
+    <section class="products" id="list">
+      <!-- cards injected by JS -->
+    </section>
+
+    <section class="footer" id="kontakt">
+      <div class="smallpanel">
+        <h4>Kontakt</h4>
+        <p style="margin:0;color:var(--muted);font-size:13px;line-height:1.6">
+          WhatsApp: <b>+49 123 4567890</b><br/>
+          Instagram: <b>@dein_name</b><br/>
+          Standort: Deutschland
+        </p>
+        <div class="hr"></div>
+        <p style="margin:0;color:var(--muted);font-size:12px">
+          Schreib mir einfach: Produktname + Menge + PLZ/Ort. Ich antworte mit Verfügbarkeit & Versandpreis.
+        </p>
+      </div>
+
+      <div class="smallpanel">
+        <h4>Info / Hinweise</h4>
+        <p style="margin:0;color:var(--muted);font-size:12px;line-height:1.6">
+          • Preise inkl. MwSt. nur falls du gewerblich verkaufst – sonst “Endpreis” ohne MwSt-Ausweis (Kleinunternehmerregelung prüfen).<br/>
+          • Bilder: Wenn du willst, kann ich dir auch passende Produktfotos-Platzhalter gestalten (oder du fügst deine eigenen ein).<br/>
+          • Rechtliches: Für echte Shops brauchst du normalerweise Impressum + Datenschutzerklärung + Widerrufsinfo.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // ====== EDIT HERE ======
+    const WHATSAPP_NUMBER = "491234567890"; // ohne +, mit Ländercode (49...)
+    const INSTAGRAM = "@dein_name";
+    // =======================
+
+    const products = [
+      {id:"KUF-01", name:"Kufi (Baumwolle) – Weiß", cat:"mütze", price:5.99, desc:"Schlicht, leicht, gute Passform. Größen: S/M/L.", tags:["weiß","kufi","baumwolle"]},
+      {id:"KUF-02", name:"Gebetsmütze (Bestickt) – Schwarz", cat:"mütze", price:7.99, desc:"Dezente Stickerei, angenehm für Alltag & Gebet.", tags:["schwarz","bestickt"]},
+      {id:"TEP-01", name:"Gebetsteppich – Premium (Navy)", cat:"teppich", price:19.99, desc:"Weich, saubere Kanten, gute Dicke. Geschenk-tauglich.", tags:["teppich","navy"]},
+      {id:"TEP-02", name:"Gebetsteppich – Travel (leicht)", cat:"teppich", price:12.99, desc:"Dünner & leicht, perfekt für Rucksack / Auto.", tags:["travel","leicht"]},
+      {id:"ITR-01", name:"Itr (Parfumöl) – Oud Style 6ml", cat:"itr", price:9.99, desc:"Kräftig-warm, langanhaltend. Unisex.", tags:["oud","6ml","öl"]},
+      {id:"ITR-02", name:"Itr (Parfumöl) – Musk 6ml", cat:"itr", price:8.99, desc:"Sauber, weich, alltagstauglich.", tags:["musk","6ml","öl"]},
+      {id:"TSB-01", name:"Tasbih – 33 Perlen (Holz)", cat:"tasbih", price:6.49, desc:"Leicht, angenehm in der Hand, stabiler Faden.", tags:["33","holz"]},
+      {id:"TSB-02", name:"Tasbih – 99 Perlen (Acryl)", cat:"tasbih", price:9.49, desc:"Klassisch, gute Haptik, schönes Finish.", tags:["99","acryl"]}
+    ];
+
+    const list = document.getElementById("list");
+    const q = document.getElementById("q");
+    const cat = document.getElementById("cat");
+
+    function esc(s){ return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+    function render(){
+      const query = q.value.trim().toLowerCase();
+      const c = cat.value;
+
+      const filtered = products.filter(p => {
+        const hitQ = !query || (p.name + " " + p.desc + " " + p.tags.join(" ")).toLowerCase().includes(query);
+        const hitC = (c==="all") || (p.cat===c);
+        return hitQ && hitC;
+      });
+
+      list.innerHTML = filtered.map(p => {
+        const msg = `Salam, ich möchte bestellen:%0A- Produkt: ${encodeURIComponent(p.name)}%0A- Artikel-Nr.: ${p.id}%0A- Menge: 1%0A- PLZ/Ort: ...%0A`;
+        const wa = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+        return `
+          <article class="card">
+            <div class="img">Hier später Produktfoto</div>
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px">
+              <h3>${esc(p.name)}</h3>
+              <div class="price">${p.price.toFixed(2)} €</div>
+            </div>
+            <div class="meta">
+              <span class="chip">Artikel: ${esc(p.id)}</span>
+              <span class="chip">Kategorie: ${esc(p.cat)}</span>
+            </div>
+            <p>${esc(p.desc)}</p>
+            <div class="actions">
+              <a class="btn mini primary" href="${wa}" target="_blank" rel="noopener">WhatsApp</a>
+              <button class="btn mini" onclick="copyText('${esc(p.name)} (${esc(p.id)}) – ${p.price.toFixed(2)} €')">Kopieren</button>
+            </div>
+          </article>
+        `;
+      }).join("") || `<div class="panel" style="grid-column:1/-1">Keine Treffer.</div>`;
+    }
+
+    function copyText(t){
+      navigator.clipboard.writeText(t).then(()=>alert("Kopiert: " + t)).catch(()=>prompt("Kopieren:", t));
+    }
+
+    // Update header contact button
+    const whatsBtn = document.getElementById("whatsBtn");
+    whatsBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=Salam%20ich%20m%C3%B6chte%20bestellen:%20`;
+    render();
+    q.addEventListener("input", render);
+    cat.addEventListener("change", render);
+  </script>
+</body>
+</html>
