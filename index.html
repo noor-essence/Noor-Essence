@@ -263,49 +263,50 @@ footer{
   backdrop-filter: blur(8px);
 }
 
-/* =========================
-   HANDY ANPASSUNG
-   ========================= */
+  .brand-box{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-circle{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid #d6b46a;
+  color: #d6b46a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.brand-text{
+  display: flex;
+  flex-direction: column;
+}
+
+/* 👉 HIER DANACH kommt der Handy-Teil 👇 */
+
 @media (max-width: 700px){
 
-  /* obere Leiste */
-  .topbar{
-    flex-direction: column;
-    gap: 10px;
-    padding: 14px;
+  .brand-box{
+    align-items: flex-start;
+  }
+
+  .logo{
+    font-size: 15px;
   }
 
   .tagline{
     font-size: 12px;
-    text-align: center;
   }
 
-  /* großer Titel */
-  h1{
-    font-size: 38px;
-  }
-
-  /* Text */
-  .subtitle{
-    font-size: 16px;
-    padding: 0 10px;
-  }
-
-  /* Button */
-  .btn{
-    width: 100%;
-    max-width: 320px;
-  }
-
-  /* Karten untereinander */
-  .box{
-    grid-template-columns: 1fr;
-  }
-
-  .card{
-    padding: 28px 22px;
-  }
 }
+
+
 
 
 </style>
@@ -315,19 +316,24 @@ footer{
 <body>
 
 <div class="topbar">
-  <div class="logo">
-  <span class="mark">NE</span>
-  <span class="brand">NOOR ESSENCE</span>
-</div>
 
+  <div class="brand-box">
+    <div class="logo-circle">NE</div>
 
-  <div class="tagline">نور • Qualität • Vertrauen</div>
+    <div class="brand-text">
+      <div class="logo">NOOR ESSENCE</div>
+      <div class="tagline">نور • Qualität • Vertrauen</div>
+    </div>
+  </div>
 
-  <a class="whatsapp-btn" href="https://wa.me/4917640523392" target="_blank">
-    WhatsApp
+  <a class="whatsapp-btn"
+     href="https://wa.me/4917640523392"
+     target="_blank">
+     WhatsApp
   </a>
- 
+
 </div>
+
 
 
 
