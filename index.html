@@ -156,6 +156,7 @@ h2{
   gap: 18px;
 }
 
+<style>
 .card{
   background: var(--card);
   border: 1px solid var(--border);
@@ -166,19 +167,17 @@ h2{
   position: relative;
   padding-top: 48px;
 
-}
- 
-.card{
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
 .card:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 26px 70px rgba(0,0,0,0.35);
-  border-color: rgba(214,180,106,0.22);
+  transform: translateY(-6px) !important;
+  box-shadow: 0 26px 70px rgba(0,0,0,0.35) !important;
+  border-color: rgba(214,180,106,0.22) !important;
 }
+</style>
 
-
+  
 .card h3{
   margin: 0 0 10px;
   font-size: 18px;
@@ -201,6 +200,7 @@ footer{
 .products{
   margin-top: 22px;
 }
+
 
 .product-card{
   position: relative;
