@@ -1,153 +1,200 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Noor Collection – Islamic Essentials</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Premium Fonts (Google) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: radial-gradient(circle at top, #0f172a, #020617);
-      color: #ffffff;
-      text-align: center;
+    :root{
+      --bg1:#0b1220;
+      --bg2:#020617;
+      --text:#ffffff;
+      --muted:#cbd5e1;
+      --muted2:#94a3b8;
+
+      /* Noor premium accents */
+      --gold:#d6b46a;
+      --gold2:#f1dfb1;
+
+      /* Card glass */
+      --card: rgba(255,255,255,0.045);
+      --border: rgba(255,255,255,0.09);
+
+      /* Button */
+      --btn1:#22c55e;
+      --btn2:#16a34a;
     }
 
-    header {
-      padding: 90px 20px 70px;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      text-align:center;
+
+      /* Premium calm background */
+      background:
+        radial-gradient(900px 500px at 50% -10%, rgba(214,180,106,0.16), transparent 60%),
+        radial-gradient(1200px 700px at 10% 20%, rgba(56,189,248,0.10), transparent 55%),
+        radial-gradient(900px 600px at 90% 35%, rgba(34,197,94,0.08), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
     }
 
-    h1 {
-      font-size: 46px;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
+    header{
+      padding: 92px 20px 60px;
+      max-width: 960px;
+      margin: 0 auto;
     }
 
-    .subtitle {
-      color: #cbd5e1;
+    /* Title = premium serif */
+    h1{
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 700;
+      font-size: clamp(44px, 6vw, 68px);
+      letter-spacing: 0.6px;
+      margin: 0 0 10px;
+    }
+
+    /* subtle gold underline */
+    .noorline{
+      width: 86px;
+      height: 2px;
+      margin: 14px auto 22px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      border-radius: 999px;
+      opacity: 0.95;
+    }
+
+    .subtitle{
+      color: var(--muted);
       font-size: 18px;
-      max-width: 650px;
-      margin: auto;
-      line-height: 1.6;
+      line-height: 1.75;
+      max-width: 720px;
+      margin: 0 auto;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 35px;
-      padding: 16px 36px;
-      background: linear-gradient(135deg, #22c55e, #16a34a);
-      color: #020617;
-      text-decoration: none;
-      border-radius: 14px;
-      font-weight: bold;
-      font-size: 17px;
-      transition: 0.2s;
+    .subtitle b{
+      color:#eaf2ff;
+      font-weight:600;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
+    .ctaRow{
+      margin-top: 34px;
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
     }
 
-    section {
-      padding: 70px 20px;
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 16px 34px;
+      border-radius: 16px;
+      text-decoration:none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: transform .18s ease, opacity .18s ease;
+      border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
     }
 
-    .box {
-      max-width: 900px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
+    .btnPrimary{
+      color:#04110a;
+      background: linear-gradient(135deg, var(--btn1), var(--btn2));
     }
 
-    .card {
+    .btnGhost{
+      color: var(--text);
       background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 30px 20px;
-      backdrop-filter: blur(8px);
     }
 
-    .card h3 {
+    .btn:hover{ transform: translateY(-2px); opacity: .96; }
+
+    section{
+      padding: 64px 20px;
+    }
+
+    h2{
+      margin:0 0 14px;
+      font-size: 30px;
+      letter-spacing: .2px;
+    }
+
+    .sectionNote{
+      color: var(--muted2);
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .box{
+      max-width: 1040px;
+      margin: 34px auto 0;
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 26px 22px;
+      text-align:left;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 18px 46px rgba(0,0,0,0.25);
+    }
+
+    .cardTop{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
       margin-bottom: 10px;
     }
 
-    .card p {
-      color: #cbd5e1;
+    .icon{
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: rgba(214,180,106,0.10);
+      border: 1px solid rgba(214,180,106,0.20);
+      color: var(--gold2);
+      font-size: 18px;
+      flex: 0 0 auto;
+    }
+
+    .card h3{
+      margin: 2px 0 0;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing:.2px;
+    }
+
+    .card p{
+      margin: 10px 0 0;
+      color: var(--muted);
       font-size: 15px;
-      line-height: 1.5;
+      line-height: 1.65;
     }
 
-    .coming {
-      font-size: 20px;
-      color: #86efac;
-      margin-top: 25px;
-    }
-
-    footer {
-      padding: 40px 20px;
-      font-size: 14px;
-      color: #94a3b8;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <h1>Noor Collection</h1>
-  <p class="subtitle">
-    Hochwertige islamische Essentials – Gebetsmützen, Gebetsteppiche,
-    Itr und Tasbih.  
-    <br><br>
-    Bestellung einfach und direkt per WhatsApp.
-  </p>
-
-  <a class="btn" href="https://wa.me/491234567890">
-    Jetzt per WhatsApp bestellen
-  </a>
-</header>
-
-<section>
-  <h2>Warum Noor Collection?</h2>
-
-  <div class="box">
-    <div class="card">
-      <h3>📦 Versand aus Deutschland</h3>
-      <p>Schneller und zuverlässiger Versand direkt aus Deutschland.</p>
-    </div>
-
-    <div class="card">
-      <h3>💬 Persönlicher Kontakt</h3>
-      <p>Direkte Kommunikation über WhatsApp – ehrlich & unkompliziert.</p>
-    </div>
-
-    <div class="card">
-      <h3>🌙 Sorgfältige Auswahl</h3>
-      <p>Unsere Produkte werden bewusst und mit Verantwortung ausgewählt.</p>
-    </div>
-
-    <div class="card">
-      <h3>🤝 Vertrauen & Transparenz</h3>
-      <p>Klare Abläufe, faire Preise und respektvoller Umgang.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Produkte</h2>
-  <p class="coming">
-    ✨ Bald verfügbar – unsere erste Kollektion ist aktuell in Vorbereitung.
-  </p>
-</section>
-
-<footer>
-  © 2026 Noor Collection
-</footer>
-
-</body>
-</html>
+    .comingWrap{
+      max-width: 900px;
+      margin: 30px auto 0;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(214,180,106,0.18);
+      border-radius: 22px;
+      padding: 26px 22px;
+      b
