@@ -1,70 +1,321 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>So funktioniert’s – Noor Essence</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
+    :root{
+      --bg1:#0b1220;
+      --bg2:#020617;
+      --text:#ffffff;
+      --muted:#cbd5e1;
+      --muted2:#94a3b8;
+      --gold:#d6b46a;
+      --card: rgba(255,255,255,0.045);
+      --border: rgba(255,255,255,0.10);
+      --btn1:#22c55e;
+      --btn2:#16a34a;
+    }
+
+    *{ box-sizing:border-box; }
+
     body{
       margin:0;
       font-family: "Segoe UI", Arial, sans-serif;
-      background:#020617;
-      color:#fff;
+      color:var(--text);
       text-align:center;
-      padding:60px 20px;
+
+      background:
+        radial-gradient(900px 520px at 50% -10%, rgba(214,180,106,0.14), transparent 60%),
+        radial-gradient(1200px 720px at 12% 22%, rgba(56,189,248,0.10), transparent 55%),
+        radial-gradient(950px 650px at 88% 40%, rgba(34,197,94,0.07), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+    }
+
+    /* Topbar */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(2,6,23,0.75);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+      padding: 14px 22px;
+      gap: 14px;
+    }
+
+    .brand-box{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-align:left;
+      min-width: 240px;
+    }
+
+    .logo-circle{
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 900;
+      letter-spacing: 1px;
+      font-size: 14px;
+      flex: 0 0 auto;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction: column;
+      gap: 3px;
+      line-height: 1.1;
+    }
+
+    .brand{
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .tagline{
+      font-size: 13px;
+      letter-spacing: 1.2px;
+      color: rgba(255,255,255,0.55);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .whatsapp-btn{
+      background: linear-gradient(135deg, var(--btn1), var(--btn2));
+      color: #03120a;
+      padding: 10px 16px;
+      border-radius: 14px;
+      text-decoration:none;
+      font-weight: 900;
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25);
+      white-space: nowrap;
+    }
+
+    /* Page */
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 52px 18px 70px;
     }
 
     h1{
-      margin-bottom: 20px;
+      font-size: clamp(34px, 5vw, 54px);
+      margin: 0 0 10px;
+      font-weight: 900;
+      letter-spacing: .5px;
     }
 
-    .box{
-      max-width:900px;
-      margin:0 auto;
+    .line{
+      width: 86px;
+      height: 2px;
+      margin: 14px auto 18px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      border-radius: 999px;
+    }
+
+    .subtitle{
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.75;
+      max-width: 760px;
+      margin: 0 auto 28px;
+    }
+
+    .grid{
       display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-      gap:18px;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+      text-align:left;
     }
 
     .card{
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 20px;
-      padding: 26px;
+      grid-column: span 6;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 46px rgba(0,0,0,0.25);
     }
 
-    a{
-      color:#d6b46a;
-      text-decoration:none;
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: .2px;
+    }
+
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .steps{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .actions{
+      display:flex;
+      gap: 12px;
+      justify-content:center;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .btn{
       display:inline-block;
-      margin-top:40px;
+      padding: 14px 22px;
+      border-radius: 16px;
+      text-decoration:none;
+      font-weight: 900;
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+    }
+
+    .btn.primary{
+      background: linear-gradient(135deg, var(--btn1), var(--btn2));
+      color: #03120a;
+    }
+
+    .btn.secondary{
+      background: transparent;
+      color: #22c55e;
+      border: 1px solid rgba(34,197,94,0.55);
+    }
+
+    footer{
+      margin-top: 44px;
+      padding: 26px 16px;
+      font-size: 14px;
+      color: var(--muted2);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align:center;
+    }
+
+    /* Handy */
+    @media (max-width: 700px){
+      .topbar{
+        padding: 12px 14px;
+      }
+
+      .brand-box{
+        min-width: 0;
+      }
+
+      .tagline{
+        font-size: 12px;
+        white-space: normal;
+      }
+
+      .wrap{
+        padding-top: 38px;
+      }
+
+      .subtitle{
+        font-size: 16px;
+      }
+
+      .card{
+        grid-column: span 12;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <h1>So funktioniert’s</h1>
-
-  <div class="box">
-    <div class="card">
-      <h3>1) Auswahl</h3>
-      <p>Du wählst dein gewünschtes Produkt oder fragst uns nach Empfehlungen.</p>
+  <div class="topbar">
+    <div class="brand-box">
+      <div class="logo-circle">NE</div>
+      <div class="brand-text">
+        <div class="brand">NOOR ESSENCE</div>
+        <div class="tagline">نور • Qualität • Vertrauen</div>
+      </div>
     </div>
 
-    <div class="card">
-      <h3>2) WhatsApp</h3>
-      <p>Du schreibst uns direkt per WhatsApp – persönlich & unkompliziert.</p>
-    </div>
-
-    <div class="card">
-      <h3>3) Versand</h3>
-      <p>Nach Bestätigung versenden wir zuverlässig aus Deutschland.</p>
-    </div>
+    <a class="whatsapp-btn"
+      href="https://wa.me/4917640523392?text=Salam%20alaikum%20%F0%9F%8C%99%0AIch%20m%C3%B6chte%20bestellen%20und%20h%C3%A4tte%20eine%20kurze%20Frage."
+      target="_blank">WhatsApp</a>
   </div>
 
-  <a href="index.html">← Zurück zur Startseite</a>
+  <div class="wrap">
+    <h1>So funktioniert’s</h1>
+    <div class="line"></div>
+
+    <p class="subtitle">
+      Bei Noor Essence bestellst du ganz einfach per WhatsApp – schnell, persönlich und transparent.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h2>✅ 1) Nachricht senden</h2>
+        <p>Du schreibst uns kurz auf WhatsApp (z.B. welches Produkt du willst oder welche Frage du hast).</p>
+      </div>
+
+      <div class="card">
+        <h2>✅ 2) Auswahl & Bestätigung</h2>
+        <p>Wir schicken dir Bilder/Details, Verfügbarkeit und den Gesamtpreis (inkl. Versand) – du bestätigst.</p>
+      </div>
+
+      <div class="card">
+        <h2>✅ 3) Versand aus Deutschland</h2>
+        <p>Nach Bestätigung verpacken wir sorgfältig und senden zuverlässig innerhalb Deutschlands.</p>
+      </div>
+
+      <div class="card">
+        <h2>✅ 4) Update & Support</h2>
+        <p>Du bekommst Updates und kannst jederzeit nachfragen – wir antworten direkt.</p>
+      </div>
+
+      <div class="card" style="grid-column: span 12;">
+        <h2>💡 Tipp (damit es richtig schnell geht)</h2>
+        <p>Schreib direkt dazu: <b>Produkt</b>, <b>Menge</b>, <b>PLZ/Ort</b>. Dann können wir sofort rechnen & bestätigen.</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a class="btn primary"
+        href="https://wa.me/4917640523392?text=Salam%20alaikum%20%F0%9F%8C%99%0AIch%20m%C3%B6chte%20eine%20Frage%20stellen."
+        target="_blank">Frage stellen</a>
+
+      <a class="btn secondary"
+        href="https://wa.me/4917640523392?text=Salam%20alaikum%20%F0%9F%8C%99%0AIch%20m%C3%B6chte%20eine%20Bestellung%20starten.%20Meine%20PLZ%20ist%20____%20und%20ich%20interessiere%20mich%20f%C3%BCr%3A%20____."
+        target="_blank">Bestellung starten</a>
+    </div>
+
+    <div class="actions" style="margin-top:14px;">
+      <a class="btn secondary" href="index.html">← Zurück zur Startseite</a>
+    </div>
+
+    <footer>
+      © 2026 Noor Essence
+    </footer>
+  </div>
 
 </body>
 </html>
