@@ -413,15 +413,15 @@ footer{
   bottom: 22px;
   right: 22px;
 
-  width: 46px;
-  height: 46px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 
   background: rgba(214,180,106,0.18);
   color: #d6b46a;
 
   border: 1px solid rgba(214,180,106,0.45);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 900;
 
   cursor: pointer;
@@ -430,8 +430,14 @@ footer{
   z-index: 9999;
 
   backdrop-filter: blur(10px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.35);
+
+  /* 🔥 DAS ist wichtig */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 #toTop:hover{
   background: rgba(214,180,106,0.28);
