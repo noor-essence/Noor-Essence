@@ -26,6 +26,7 @@
       font-family: "Segoe UI", Arial, sans-serif;
       color:var(--text);
       text-align:center;
+
       background:
         radial-gradient(900px 520px at 50% -10%, rgba(214,180,106,0.14), transparent 60%),
         radial-gradient(1200px 720px at 12% 22%, rgba(56,189,248,0.10), transparent 55%),
@@ -33,7 +34,7 @@
         linear-gradient(180deg, var(--bg1), var(--bg2));
     }
 
-    /* Topbar (wie Homepage) */
+    /* Topbar */
     .topbar{
       position: sticky;
       top: 0;
@@ -71,6 +72,7 @@
       display:flex;
       flex-direction: column;
       text-align:left;
+      line-height: 1.15;
     }
 
     .brand{
@@ -87,6 +89,7 @@
       letter-spacing: 1.5px;
       color: rgba(255,255,255,0.55);
       font-weight: 600;
+      white-space: nowrap;
     }
 
     .logo-link{
@@ -140,67 +143,71 @@
       margin: 0 auto 28px;
     }
 
-    /* Cards */
-    .box{
-      max-width: 1040px;
-      margin: 26px auto 0;
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      text-align:left;
-    }
-
     .card{
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 22px;
-      padding: 22px;
+      padding: 34px 26px 30px;
       backdrop-filter: blur(10px);
       box-shadow: 0 18px 46px rgba(0,0,0,0.25);
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
       position: relative;
+      text-align:left;
+
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      transform: translateY(0);
+      cursor: pointer;
+      max-width: 1040px;
+      margin: 0 auto;
     }
 
     .card:hover{
       transform: translateY(-6px);
-      box-shadow: 0 26px 70px rgba(0,0,0,0.35);
-      border-color: rgba(214,180,106,0.22);
+      box-shadow: 0 26px 60px rgba(0,0,0,0.38);
+      border-color: rgba(214,180,106,0.30);
+    }
+
+    @media (hover: none){
+      .card:active{
+        transform: translateY(-4px);
+        box-shadow: 0 26px 60px rgba(0,0,0,0.38);
+        border-color: rgba(214,180,106,0.30);
+      }
     }
 
     .badge{
-      display:inline-block;
+      position: absolute;
+      top: -10px;
+      left: 22px;
       background: rgba(214,180,106,0.15);
       color: #d6b46a;
-      padding: 6px 12px;
+      padding: 6px 14px;
       border-radius: 999px;
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.5px;
       border: 1px solid rgba(214,180,106,0.35);
-      margin-bottom: 14px;
+      backdrop-filter: blur(8px);
     }
 
     .card h2{
-      margin: 0 0 10px;
+      margin: 22px 0 10px;
       font-size: 18px;
       font-weight: 900;
-      letter-spacing: .2px;
     }
 
     .card p{
-      margin: 0;
+      margin: 0 0 10px;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.7;
     }
 
-    /* Buttons */
     .actions{
       display:flex;
       gap: 12px;
       justify-content:center;
       flex-wrap: wrap;
-      margin-top: 22px;
+      margin-top: 26px;
     }
 
     .btn{
@@ -233,7 +240,7 @@
       text-align:center;
     }
 
-    /* Handy */
+    /* Handy Topbar (gleich wie Homepage) */
     @media (max-width: 700px){
       .topbar{ padding: 12px 14px; }
       .brand-box{ gap: 10px; }
@@ -241,72 +248,49 @@
       .brand{ font-size: 13px; letter-spacing: 2px; }
       .tagline{ font-size: 11px; opacity: 0.75; margin-top: 2px; }
       .whatsapp-btn{ padding: 10px 18px; font-size: 14px; border-radius: 999px; }
-      .wrap{ padding-top: 44px; }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="topbar">
-    <a href="index.html" class="logo-link">
-      <div class="brand-box">
-        <div class="logo-circle">NE</div>
-        <div class="brand-text">
-          <div class="brand">NOOR ESSENCE</div>
-          <div class="tagline">نور • Qualität • Vertrauen</div>
-        </div>
-      </div>
-    </a>
-
-    <a class="whatsapp-btn"
-       href="https://wa.me/4917640523392?text=Salam%20alaikum%20%F0%9F%8C%99%0AIch%20interessiere%20mich%20f%C3%BCr%20M%C3%BCtzen%20%26%20Kopfbedeckungen."
-       target="_blank">
-       WhatsApp
-    </a>
-  </div>
-
-  <div class="wrap">
-    <h1>Mützen & Kopfbedeckungen</h1>
-    <div class="line"></div>
-
-    <p class="subtitle">
-      Bald verfügbar – hier kommen in Kürze Modelle, Varianten und Preise.
-      Du kannst uns aber jetzt schon per WhatsApp schreiben und nachfragen.
-    </p>
-
-    <div class="box">
-      <div class="card">
-        <span class="badge">Bald verfügbar</span>
-        <h2>🧢 Modelle & Varianten</h2>
-        <p>Wir bereiten verschiedene Stile vor (schlicht, elegant, Alltag). Details folgen.</p>
-      </div>
-
-      <div class="card">
-        <span class="badge">Bald verfügbar</span>
-        <h2>📏 Größen & Materialien</h2>
-        <p>Sobald verfügbar, findest du hier Infos zu Größen, Stoff und Tragekomfort.</p>
-      </div>
-
-      <div class="card">
-        <span class="badge">Bald verfügbar</span>
-        <h2>💰 Preise</h2>
-        <p>Preise werden transparent angezeigt, sobald die erste Auswahl steht.</p>
+<div class="topbar">
+  <a href="index.html" class="logo-link">
+    <div class="brand-box">
+      <div class="logo-circle">NE</div>
+      <div class="brand-text">
+        <div class="brand">NOOR ESSENCE</div>
+        <div class="tagline">نور • Qualität • Vertrauen</div>
       </div>
     </div>
+  </a>
 
-    <div class="actions">
-      <a class="btn secondary" href="produkte.html">← Zurück zu Produkte</a>
+  <a class="whatsapp-btn" href="https://wa.me/4917640523392" target="_blank">WhatsApp</a>
+</div>
 
-      <a class="btn primary"
-         href="https://wa.me/4917640523392?text=Salam%20alaikum%20%F0%9F%8C%99%0AIch%20m%C3%B6chte%20Infos%20zu%20M%C3%BCtzen%20%26%20Kopfbedeckungen.%0A%0AInteresse%3A%20____%0AFarbe%2FStil%3A%20____%0AAnzahl%3A%20____"
-         target="_blank">
-        Anfrage per WhatsApp
-      </a>
-    </div>
+<div class="wrap">
+  <h1>Mützen & Kopfbedeckungen</h1>
+  <div class="line"></div>
 
-    <footer>© 2026 Noor Essence</footer>
+  <p class="subtitle">
+    Bequem & hochwertig – bald findest du hier Modelle, Größen und Preise.
+  </p>
+
+  <div class="card">
+    <div class="badge">Bald verfügbar</div>
+
+    <h2>🧢 Mützen & Kopfbedeckungen</h2>
+    <p>Verschiedene Designs – bequem & hochwertig.</p>
+    <p>(Bilder, Größen & Preise folgen.)</p>
   </div>
+
+  <div class="actions">
+    <a class="btn secondary" href="produkte.html">← Zurück zur Produktübersicht</a>
+    <a class="btn primary" href="https://wa.me/4917640523392?text=Salam%20alaikum%20%F0%9F%8C%99%0AIch%20m%C3%B6chte%20Infos%20zu%20M%C3%BCtzen%20%26%20Kopfbedeckungen." target="_blank">Per WhatsApp fragen</a>
+  </div>
+
+  <footer>© 2026 Noor Essence</footer>
+</div>
 
 </body>
 </html>
