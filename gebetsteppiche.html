@@ -18,6 +18,7 @@
       --btn1:#22c55e;
       --btn2:#16a34a;
     }
+
     *{ box-sizing:border-box; }
 
     body{
@@ -25,6 +26,7 @@
       font-family: "Segoe UI", Arial, sans-serif;
       color:var(--text);
       text-align:center;
+
       background:
         radial-gradient(900px 520px at 50% -10%, rgba(214,180,106,0.14), transparent 60%),
         radial-gradient(1200px 720px at 12% 22%, rgba(56,189,248,0.10), transparent 55%),
@@ -45,34 +47,56 @@
       padding: 14px 22px;
     }
 
-    .brand-box{ display:flex; align-items:center; gap:12px; }
+    .brand-box{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
     .logo-circle{
-      width: 42px; height: 42px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       border: 2px solid #d6b46a;
       color: #d6b46a;
-      display:flex; align-items:center; justify-content:center;
-      font-weight: 900; letter-spacing: 1px; font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      letter-spacing: 1px;
+      font-size: 14px;
     }
 
-    .brand-text{ display:flex; flex-direction:column; text-align:left; }
+    .brand-text{
+      display:flex;
+      flex-direction: column;
+      text-align:left;
+      line-height: 1.15;
+    }
 
     .brand{
-      font-weight: 800; font-size: 14px;
-      letter-spacing: 3px; text-transform: uppercase;
-      color: #d6b46a; white-space: nowrap;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #d6b46a;
+      white-space: nowrap;
     }
 
     .tagline{
-      font-size: 13px; letter-spacing: 1.5px;
+      font-size: 13px;
+      letter-spacing: 1.5px;
       color: rgba(255,255,255,0.55);
       font-weight: 600;
+      white-space: nowrap;
     }
 
     .logo-link{
-      display:inline-flex; align-items:center;
-      text-decoration:none; color:inherit; cursor:pointer;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
     .logo-link:hover{ opacity: 0.9; }
 
@@ -88,7 +112,11 @@
       white-space: nowrap;
     }
 
-    .wrap{ max-width: 980px; margin:0 auto; padding: 52px 18px 70px; }
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 52px 18px 70px;
+    }
 
     h1{
       font-size: clamp(34px, 5vw, 54px);
@@ -98,7 +126,8 @@
     }
 
     .line{
-      width: 86px; height: 2px;
+      width: 86px;
+      height: 2px;
       margin: 14px auto 18px;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
       border-radius: 999px;
@@ -112,54 +141,62 @@
       margin: 0 auto 28px;
     }
 
-    .box{
-      max-width: 1040px;
-      margin: 26px auto 0;
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      text-align:left;
-    }
-
     .card{
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 22px;
-      padding: 22px;
+      padding: 34px 26px 30px;
       backdrop-filter: blur(10px);
       box-shadow: 0 18px 46px rgba(0,0,0,0.25);
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      position: relative;
+      text-align:left;
+
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      transform: translateY(0);
+      cursor: pointer;
+      max-width: 1040px;
+      margin: 0 auto;
     }
+
     .card:hover{
       transform: translateY(-6px);
-      box-shadow: 0 26px 70px rgba(0,0,0,0.35);
-      border-color: rgba(214,180,106,0.22);
+      box-shadow: 0 26px 60px rgba(0,0,0,0.38);
+      border-color: rgba(214,180,106,0.30);
+    }
+
+    @media (hover: none){
+      .card:active{
+        transform: translateY(-4px);
+        box-shadow: 0 26px 60px rgba(0,0,0,0.38);
+        border-color: rgba(214,180,106,0.30);
+      }
     }
 
     .badge{
-      display:inline-block;
+      position: absolute;
+      top: -10px;
+      left: 22px;
       background: rgba(214,180,106,0.15);
       color: #d6b46a;
-      padding: 6px 12px;
+      padding: 6px 14px;
       border-radius: 999px;
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.5px;
       border: 1px solid rgba(214,180,106,0.35);
-      margin-bottom: 14px;
+      backdrop-filter: blur(8px);
     }
 
     .card h2{
-      margin: 0 0 10px;
+      margin: 22px 0 10px;
       font-size: 18px;
       font-weight: 900;
-      letter-spacing: .2px;
     }
 
     .card p{
-      margin: 0;
+      margin: 0 0 10px;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.7;
     }
 
@@ -168,7 +205,7 @@
       gap: 12px;
       justify-content:center;
       flex-wrap: wrap;
-      margin-top: 22px;
+      margin-top: 26px;
     }
 
     .btn{
@@ -208,70 +245,49 @@
       .brand{ font-size: 13px; letter-spacing: 2px; }
       .tagline{ font-size: 11px; opacity: 0.75; margin-top: 2px; }
       .whatsapp-btn{ padding: 10px 18px; font-size: 14px; border-radius: 999px; }
-      .wrap{ padding-top: 44px; }
     }
   </style>
 </head>
 
 <body>
-  <div class="topbar">
-    <a href="index.html" class="logo-link">
-      <div class="brand-box">
-        <div class="logo-circle">NE</div>
-        <div class="brand-text">
-          <div class="brand">NOOR ESSENCE</div>
-          <div class="tagline">نور • Qualität • Vertrauen</div>
-        </div>
-      </div>
-    </a>
 
-    <a class="whatsapp-btn"
-       href="https://wa.me/4917640523392?text=Salam%20alaikum%20%F0%9F%8C%99%0AIch%20interessiere%20mich%20f%C3%BCr%20Gebetsteppiche."
-       target="_blank">
-       WhatsApp
-    </a>
-  </div>
-
-  <div class="wrap">
-    <h1>🕌 Gebetsteppiche</h1>
-    <div class="line"></div>
-
-    <p class="subtitle">
-      Bald verfügbar – hier erscheinen bald Designs, Größen und Preise.
-      Wenn du schon jetzt etwas suchst, schreib uns gern per WhatsApp.
-    </p>
-
-    <div class="box">
-      <div class="card">
-        <span class="badge">Bald verfügbar</span>
-        <h2>🎨 Designs</h2>
-        <p>Schlichte und elegante Muster – sorgfältig ausgewählt. Bilder folgen in Kürze.</p>
-      </div>
-
-      <div class="card">
-        <span class="badge">Bald verfügbar</span>
-        <h2>📏 Größen & Qualität</h2>
-        <p>Infos zu Größe, Dicke und Verarbeitung kommen dazu, sobald die Auswahl feststeht.</p>
-      </div>
-
-      <div class="card">
-        <span class="badge">Bald verfügbar</span>
-        <h2>💰 Preise</h2>
-        <p>Transparente Preise – werden angezeigt, sobald die ersten Modelle verfügbar sind.</p>
+<div class="topbar">
+  <a href="index.html" class="logo-link">
+    <div class="brand-box">
+      <div class="logo-circle">NE</div>
+      <div class="brand-text">
+        <div class="brand">NOOR ESSENCE</div>
+        <div class="tagline">نور • Qualität • Vertrauen</div>
       </div>
     </div>
+  </a>
 
-    <div class="actions">
-      <a class="btn secondary" href="produkte.html">← Zurück zu Produkte</a>
+  <a class="whatsapp-btn" href="https://wa.me/4917640523392" target="_blank">WhatsApp</a>
+</div>
 
-      <a class="btn primary"
-         href="https://wa.me/4917640523392?text=Salam%20alaikum%20%F0%9F%8C%99%0AIch%20m%C3%B6chte%20Infos%20zu%20Gebetsteppichen.%0A%0AInteresse%3A%20____%0AFarbe%2FMuster%3A%20____%0AAnzahl%3A%20____"
-         target="_blank">
-        Anfrage per WhatsApp
-      </a>
-    </div>
+<div class="wrap">
+  <h1>Gebetsteppiche</h1>
+  <div class="line"></div>
 
-    <footer>© 2026 Noor Essence</footer>
+  <p class="subtitle">
+    Schön & weich – bald findest du hier Modelle, Größen und Preise.
+  </p>
+
+  <div class="card">
+    <div class="badge">Bald verfügbar</div>
+
+    <h2>🕌 Gebetsteppiche</h2>
+    <p>Schöne Muster – weich, sauber verarbeitet.</p>
+    <p>(Bilder, Größen & Preise folgen.)</p>
   </div>
+
+  <div class="actions">
+    <a class="btn secondary" href="produkte.html">← Zurück zur Produktübersicht</a>
+    <a class="btn primary" href="https://wa.me/4917640523392?text=Salam%20alaikum%20%F0%9F%8C%99%0AIch%20m%C3%B6chte%20Infos%20zu%20Gebetsteppichen." target="_blank">Per WhatsApp fragen</a>
+  </div>
+
+  <footer>© 2026 Noor Essence</footer>
+</div>
+
 </body>
 </html>
